@@ -110,7 +110,7 @@ input[type=text]:focus, input[type=password]:focus {
 
 
 <div>
-  <form action="/action_page.php" class="container">
+  <form action="UserRegistrationAction" method="post" class="container">
     <h1>Create an Account</h1>
 
     <label for="name"><b>Name</b></label>
@@ -120,7 +120,7 @@ input[type=text]:focus, input[type=password]:focus {
     <input type="text" placeholder="Enter Email" name="Uemail" required>
 
 	<label for="accType"><b>Account Type</b></label>
-	<select name="accType">
+	<select name="UaccType">
 	<option value="student">Student</option>
 	<option value="educator">Educator</option>
 	</select>
