@@ -1,0 +1,133 @@
+@charset "UTF-8";
+
+@import url('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css');
+
+
+
+
+.jumbotron {
+  background-color: #151515;
+  color: white;
+  margin-bottom: 0;
+}
+
+
+*{
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+}
+
+
+
+.or{
+	font-weight: bold;
+	color: orange;
+}
+
+.hh2{
+	margin-top: 50px;
+	margin-buttom: 60px;
+	margin-left: 25px;
+	margin-right: 25px;
+	font-size: 25px;
+	font-weight: bold;
+}
+
+.hlink{
+	font-size: 22px;
+	padding:8px;
+	background-color: #f1f1f1;
+	font-weight: 150%;
+	border-style: hidden;
+	border-radius: 20%;
+}
+
+.box{
+	border-style: solid;
+	border-color: #151515;
+	border-width: thin;
+	text-align: center;
+	margin: 10px;
+	padding: 10px;
+	border-radius: 20px;
+}
+
+
+.box h3{
+	font-size:20px;
+	padding: 5px;
+	background-color: #f1f1f1;
+}
+
+.box p{
+	font-size: 18px;
+	text-align: left;
+}
+
+.box a{
+	border-style: hidden;
+	border-radius: 20%;
+	padding: 5px;
+	text-decoration: none;
+	background-color: #151515;
+	color: silver;
+	margin-bottom: 0;
+	font-size: 14px;
+	font-style: italic;
+}
+
+.boxb{
+	border-style: solid;
+	border-color: silver;
+	border-width: thin;
+	text-align: center;
+	margin: 10px;
+	padding: 10px;
+	border-radius: 20px;
+}
+
+.boxb h3{
+	font-size:20px;
+	padding: 5px;
+	background-color: #333333;
+}
+
+.boxb p{
+	font-size: 18px;
+	text-align: left;
+	margin-bottom: 10px;
+}
+.boxb a{
+    border-style: hidden;
+	border-radius: 20%;
+	padding: 5px;
+	margin:3px;
+	text-decoration: none;
+	background-color: #555555;
+	color: aqua;
+	font-size: 14px;
+	font-style: italic;
+	vertical-align: baseline;
+}
+
+
+.boxbi{
+	border-style: solid;
+	border-color: silver;
+	border-width: thin;
+	text-align: center;
+	margin: 10px;
+	padding: 10px;
+	border-radius: 20px;
+}
+
+
+.btm{
+	font-weight: 150%;
+	color: white;
+}
+
+.lg {
+	background-image: url("${pageContext.request.contextPath}/img/lgb.png");
+}
