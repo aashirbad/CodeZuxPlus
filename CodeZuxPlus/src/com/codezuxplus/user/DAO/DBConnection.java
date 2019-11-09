@@ -23,10 +23,7 @@ public class DBConnection {
 		Connection conn = null;
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/CodeZuxPlus","root","2856");
-		
-			System.out.print("Hello");
-			
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/My_Project","root","cool");
 			return conn;
 		}
 		
