@@ -8,7 +8,7 @@
 <div id="slides" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img class="image-fluid" src="${pageContext.request.contextPath}/img/background.jpg"/>
+      <img class="image-fluid "  src="${pageContext.request.contextPath}/img/background.jpg"/>
       <div class="carousel-caption">
         <div class"row">
           <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-10">

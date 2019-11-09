@@ -90,7 +90,7 @@ input[type=text]:focus, input[type=password]:focus {
 
 
 <div>
-  <form action="/action_page.php" class="container">
+  <form action="userLogInAction"  method = "post" class="container">
     <h1>Login</h1>
 
     <label for="email"><b>Email</b></label>
@@ -101,10 +101,6 @@ input[type=text]:focus, input[type=password]:focus {
 
     <button type="submit" class="btn">Login</button>
   </form>
-</div>
-
-
-
-
+ </div>
 </body>
 </html>
