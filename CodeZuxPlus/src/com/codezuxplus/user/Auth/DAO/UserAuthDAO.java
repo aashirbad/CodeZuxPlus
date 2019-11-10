@@ -1,5 +1,7 @@
 package com.codezuxplus.user.Auth.DAO;
 
+import com.codezuxplus.user.Auth.Bean.UserTypeBean;
+import com.codezuxplus.user.Auth.Service.UserAuthService;
 import com.codezuxplus.user.Bean.UserRegisterBean;
 import com.mysql.jdbc.Connection;
 import java.sql.*;
@@ -36,5 +38,41 @@ public class UserAuthDAO {
 		
 		return 0;
 	}
+	
+	public boolean authUser(String Uemail, String Upass) {
+		
+		boolean state=false;
+		Connection conn = (Connection) DBConnection.connectdb();
+		try {
+			PreparedStatement ps = conn.prepareStatement("select Uemail, Upass from CodeZuxPlus where Uemail=(?) and Upass=(?)");
+			ps.setString(1, Uemail);
+			ps.setString(2, Upass);
+			ResultSet rs = ps.executeQuery();
+			
+			String Uname = null;
+			String UaccType = null;
+			int Uid = 0;
+			
+			UserAuthService UTypeservice = new UserAuthService();
+			UTypeservice.TypeCheckerService(Uname,Uemail,UaccType,Uid);
+			
+			
+			if(rs.next()) {
+				state =  true;
+			}
+			else {
+				state = false;
+			}
+			
+		} catch(SQLException e) {
+			e.printStackTrace();			
+		}
+		
+		return state;
+	}
+	
+	
 
 }
+
+
