@@ -10,7 +10,7 @@ import com.codezuxplus.user.Bean.UserRegisterBean;
 public class UserAuthService {
 
 	UserAuthDAO UserDao = new UserAuthDAO();
-
+	UserAuthDAO loginDao = new UserAuthDAO();
 	
 	public int userRedgService(UserRegisterBean userBean) throws SQLException {
 
@@ -29,5 +29,10 @@ public class UserAuthService {
 		UtypeService.setUaccType(UaccType);
 		
 		return UtypeService;
+	}
+	
+	public boolean ULoginService(String Uemail, String Upass) {
+		boolean state = UserDao.authUser(Uemail, Upass);
+		return state;
 	}
 }
