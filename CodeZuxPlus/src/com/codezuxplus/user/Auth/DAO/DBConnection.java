@@ -1,20 +1,7 @@
-package com.codezuxplus.user.DAO;
+package com.codezuxplus.user.Auth.DAO;
 
-/* steps for connecting database in java - JDBC
- * 1. Importing required package: import java.sql.*;
- * 2. Load and register the driver: com.mysql.jdbc.Driver
- * 3. create connection: Connection interface
- * 4. create statement: Statement interface
- * 5. execute the query: 
- * 6. Process the results: 
- * 7. close: connection.close()
- */
-
-
-
-
-
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
 
 public class DBConnection {
 	
@@ -39,5 +26,4 @@ public class DBConnection {
 			System.out.print("Connected");
 		}
 	}
-	
 }
