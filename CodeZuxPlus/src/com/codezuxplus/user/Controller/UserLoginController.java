@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.codezuxplus.user.Auth.Bean.UserTypeBean;
 import com.codezuxplus.user.Auth.Service.UserAuthService;
 
 @WebServlet("/UserLoginAction")
@@ -20,7 +21,14 @@ public class UserLoginController extends HttpServlet {
    		String Upass = request.getParameter("Upass");
    		
    		UserAuthService UAuth = new UserAuthService();
+   		boolean state = UAuth.ULoginService(Uemail,Upass);
    		
+   		UserTypeBean UType = new UserTypeBean();
+   		
+   		
+   		if(state) {
+   		//	UType = 
+   		}
    		
    }
 
