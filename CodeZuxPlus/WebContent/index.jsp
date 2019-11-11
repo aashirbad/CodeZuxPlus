@@ -4,11 +4,11 @@
 <%@ include file="header.jsp" %>    
     <!DOCTYPE html>
 <!--- Image Slider -->
-<header>
+<header> 
 <div id="slides" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
+  <div class="carousel-inner container-fluid">
     <div class="carousel-item active">
-      <img class="image-fluid "  src="${pageContext.request.contextPath}/img/background.jpg"/>
+      <img class=" hero-image image-fluid hero"  src="${pageContext.request.contextPath}/img/loginbg.png"/>
       <div class="carousel-caption">
         <div class"row">
           <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-10">
@@ -17,13 +17,29 @@
         <button type="button" class="btn btn-outline-light btn-lg">Learn More</button>
         <button type="button" class="btn btn-primary btn-lg">Join Now</button>
 </div>
+
+ 
       </div>
     </div>
   </div>
 </div>
-</div>
+</div> 
 </header>
 <!--- Jumbotron -->
+
+<%--
+<body>
+
+<div class="hero-image">
+  <div class="hero-text">
+    <h1>I am John Doe</h1>
+    <p>And I'm a Photographer</p>
+    <button>Hire me</button>
+  </div>
+</div>
+
+</body>
+ --%>
 <div class="container-fluid">
   <div class="row jumbotron">
     <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-10">
@@ -55,7 +71,7 @@
       <div class="card-body">
         <h5 class="card-title">Special title treatment</h5>
         <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <a href="signup.jsp" class="btn btn-primary">create Your Account</a>
       </div>
     </div>
   </div>
@@ -64,7 +80,7 @@
       <div class="card-body">
         <h5 class="card-title">Special title treatment</h5>
         <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <a href="login.jsp" class="btn btn-primary">Log in</a>
       </div>
     </div>
   </div>

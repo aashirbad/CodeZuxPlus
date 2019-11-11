@@ -10,11 +10,15 @@ public class UserService {
 		
 		return userDao.registerUser(userRedgBean) ;
 	}
-	public boolean userAuthenticate(String uEmail, String uPass) {
+	public int userAuthenticate(String uEmail, String uPass) {
 		
 		return userDao.userAuthenticate(uEmail,uPass);
 	}
 	
-	
+	// Course selection
+	public void courseSelection (UserRegisterBean userRedgBean)
+	{
+		
+	}
 
 }

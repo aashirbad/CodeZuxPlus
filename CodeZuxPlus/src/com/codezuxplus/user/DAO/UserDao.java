@@ -26,20 +26,32 @@ public class UserDao {
 		return 0;
 	}
 
-	public boolean userAuthenticate(String uEmail, String uPass) {
+	public int userAuthenticate(String uEmail, String uPass) {
 		
 		try {
 			con = DBConnection.connectdb();
-			PreparedStatement p = con.prepareStatement("select * from My_Project.user_auth");
-			return p.execute();
+			PreparedStatement p = con.prepareStatement("select * from My_Project.user_auth where Uemail = ? and Upass = ?");
+			p.setString(1, uEmail);
+			p.setString(2, uPass);
+			ResultSet rs = p.executeQuery();
+			if(rs.next())
+			{
+				return(rs.getInt("uid"));
 			
+				
+			}
+			else {
+				System.out.println("Not Valide");
+				return 0;
+			}
+		
 		}
 		catch (Exception ex)
 		{
 			ex.printStackTrace();
 		}
 		
-		return false;
+		return 0;
 	}
 
 }
