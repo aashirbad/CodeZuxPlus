@@ -21,12 +21,12 @@ body, html {
 
 .bg-img {
   /* The image used */
-  background-image: url("${pageContext.request.contextPath}/img/loginbg.png");
+  background-image: url("${pageContext.request.contextPath}/img/background.jpg");
 
   /* Control the height of the image */
   min-height: 100%;
   width:100%;
-  height: 100%;
+  height: 80%;
   /* Center and scale the image nicely */
   background-position: center;
   background-repeat: no-repeat;
