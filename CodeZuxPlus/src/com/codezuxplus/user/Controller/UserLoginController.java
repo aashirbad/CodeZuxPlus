@@ -23,11 +23,9 @@ public class UserLoginController extends HttpServlet {
    		UserAuthService UAuth = new UserAuthService();
    		boolean state = UAuth.ULoginService(Uemail,Upass);
    		
-   		UserTypeBean UType = new UserTypeBean();
-   		
    		
    		if(state) {
-   		//	UType = 
+   			//UType = 
    		}
    		
    }
