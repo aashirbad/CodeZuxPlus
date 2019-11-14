@@ -13,29 +13,30 @@ import com.codezuxplus.user.Service.UserService;
 public class CourseJavaController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
 		int uid = (Integer) request.getSession().getAttribute("uid");
-		int  cId = 1216;
+		int cId = 1216;
 		String course_name = "java";
-		
+
 		UserService uService = new UserService();
-		
-	 int tc = 	uService.checkUserCourseTaken(uid,cId);
-		
-		
-		
-		int f = uService.userCourseTaken(uid,cId,course_name);
-		
-		if (f != 0)
-		{
-			request.getSession().setAttribute("cmessg", "Hey you have successfully registered this course ");
-			request.getRequestDispatcher("CourseList.jsp").forward(request, response);
+
+		int tc = uService.checkUserCourseTaken(uid, cId);
+		if (tc != 0) {
+			request.getRequestDispatcher("java.jsp").forward(request, response);
+
+		} else {
+
+			int f = uService.userCourseTaken(uid, cId, course_name);
+
+			if (f != 0) {
+				request.getSession().setAttribute("cmessg", "Hey you have successfully registered this course ");
+				request.getRequestDispatcher("/CourseList.jsp").forward(request, response);
+			} else
+				request.getSession().setAttribute("cmessg", "Opps... try again ..");
+			request.getRequestDispatcher("/CourseList.jsp").forward(request, response);
 		}
-		else
-			request.getSession().setAttribute("cmessg", "Opps... try again ..");
-		request.getRequestDispatcher("CourseList.jsp").forward(request, response);
 	}
 
 }
