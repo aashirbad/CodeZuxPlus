@@ -11,9 +11,27 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <title>ICourse Table</title>
+<style>
+.container1
+{
+top :11%;;
+position : absolute;
+margin: 2px;
+margin-left: 80%;
+height: auto;
+width: 100px;
+
+}
+
+
+</style>
+
+
+
+
 </head>
 <body>
-<form action="">
+<!-- <form action="courseJavaAction" method =  "get">   -->
 <div class="container">
   <h2>Courses </h2>        
   <table class="table table-striped table-hover" >
@@ -27,6 +45,7 @@
     </thead>
     <tbody>
 	<%  
+	int i = 0;
 	Connection conn = null;
 	try {
 		Class.forName("com.mysql.jdbc.Driver");
@@ -35,17 +54,19 @@
 		ResultSet rs = ps.executeQuery();
 		while (rs.next())
 		{
+			i ++;
 			%>
-			
+		
       <tr>
         <td><%= rs.getInt(1) %></td>
           <td><%= rs.getString(2) %></td>
           <td><%= rs.getInt(3) %></td>
             <td><%= rs.getInt(4) %></td>
-            <td><a href="https://fb.com"><button type="button" class="btn btn-primary">Primary</button></a></td>
+           <!--  <td><button type="submit" class="btn btn-primary">Primary</button></td>   -->
       </tr>
      
 		<%
+		request.setAttribute("cid", i);
 			
 		}
 	
@@ -59,6 +80,28 @@
    </tbody>
   </table>
 </div>
-</form>
+
+
+
+
+
+<div class = "container1">
+ <table  >
+    <thead>
+    
+    </thead>
+    <tbody>
+    <tr><td><a href= "courseJavaAction">java</a></td><td>${cmess}</td></tr><tr></tr>
+     <tr><td><a href ="courseCplusplusAction">C ++</a></td></tr>
+     
+      </tbody>
+      </table>
+
+</div>
+
+
+
+
+
 </body>
 </html>

@@ -28,14 +28,14 @@ public class UserDao {
 
 	public int userAuthenticate(String uEmail, String uPass) {
 		
-		try {
+	try {
 			con = DBConnection.connectdb();
 			PreparedStatement p = con.prepareStatement("select * from My_Project.user_auth where Uemail = ? and Upass = ?");
 			p.setString(1, uEmail);
 			p.setString(2, uPass);
 			ResultSet rs = p.executeQuery();
 			if(rs.next())
-			{
+				{
 				return(rs.getInt("uid"));
 			
 				
@@ -54,4 +54,52 @@ public class UserDao {
 		return 0;
 	}
 
+	public int userCoursesTAken(int uid, int cId,String course_name) {
+		
+		try {
+			con = DBConnection.connectdb();
+			PreparedStatement p = con.prepareStatement(
+					"insert into My_Project.course_taken (uid,course_id,course_name) values (?,?,?)");
+			p.setInt(1,uid );
+			p.setInt(2, cId);
+			p.setString(3, course_name);
+			
+			return p.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return 0;
+	}
+
+	public int checkUserCOurseTaken(int uid, int cId) {
+		
+try {
+		con = DBConnection.connectdb();
+		PreparedStatement p = con.prepareStatement("select * from My_Project.course_taken where uid = ? and course_id = ?");
+		p.setInt(1, uid);
+		p.setInt(2, cId);
+		ResultSet rs = p.executeQuery();
+		if(rs.next())
+			{
+			return 1;
+		}
+		else {
+			
+			return 0;
+		}
 }
+	catch (Exception e) {
+		e.printStackTrace();
+	}
+return 1;
+	
+	
+		
+		
+	}
+
+		
+	}
+
+

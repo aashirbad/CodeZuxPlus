@@ -1,6 +1,7 @@
 package com.codezuxplus.user.Controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.*;
 
 import javax.servlet.ServletException;
@@ -43,6 +44,16 @@ public class UserRegistrationController extends HttpServlet {
 		int flag;
 		flag = uService.userRegistration(userRedgBean);
 		System.out.println(flag);
+		if (flag == 1)
+		{
+			request.getRequestDispatcher("login.jsp").forward(request, response);;
+		}
+		else
+		{
+			PrintWriter out = response.getWriter();
+			out.print("OOPS Could not be  register Successfully ");
+			out.print("Try again ");
+		}
 	
 	}
 	

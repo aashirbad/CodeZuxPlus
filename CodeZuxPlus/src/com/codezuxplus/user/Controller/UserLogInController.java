@@ -26,14 +26,12 @@ public class UserLogInController extends HttpServlet {
 		{
 			response.getWriter().print("You are valide user");
 			request.getSession().setAttribute("uid", flag);
-			request . getRequestDispatcher("UserDashboard.jsp").forward(request, response);
+			request . getRequestDispatcher("CourseList.jsp").forward(request, response);
 		}
 		else
 		{
 			response.getWriter().print("Could not identified ...Sorry...");
 			response.sendRedirect("login.jsp");
 		}
-	
 	}
-
 }

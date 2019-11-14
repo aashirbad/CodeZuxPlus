@@ -20,5 +20,16 @@ public class UserService {
 	{
 		
 	}
+	// Course Taken User
+	public int userCourseTaken(int uid, int cId,String course_name) {
+		
+		return userDao.userCoursesTAken(uid,cId,course_name);
+		
+	}
+	// whether user is taken or not
+	public int checkUserCourseTaken(int uid, int cId) {
+		return userDao.checkUserCOurseTaken(uid,cId);
+		
+	}
 
 }
